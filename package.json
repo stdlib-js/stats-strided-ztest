@@ -45,6 +45,7 @@
     "@stdlib/math-base-special-sqrt": "^0.2.2",
     "@stdlib/stats-base-dists-normal-cdf": "^0.2.2",
     "@stdlib/stats-base-dists-normal-quantile": "^0.2.2",
+    "@stdlib/stats-base-ztest-alternative-resolve-str": "github:stdlib-js/stats-base-ztest-alternative-resolve-str#main",
     "@stdlib/stats-strided-mean": "github:stdlib-js/stats-strided-mean#main",
     "@stdlib/strided-base-stride2offset": "^0.1.0",
     "@stdlib/types": "^0.4.3",
