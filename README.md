@@ -49,32 +49,20 @@ A Z-test commonly refers to a one-sample location test which compares the mean o
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/stats-strided-ztest
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var ztest = require( '@stdlib/stats-strided-ztest' );
+import ztest from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-strided-ztest@esm/index.mjs';
+```
+
+You can also import the following named exports from the package:
+
+```javascript
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-strided-ztest@esm/index.mjs';
 ```
 
 #### ztest( N, alternative, alpha, mu, sigma, x, strideX, out )
@@ -82,7 +70,7 @@ var ztest = require( '@stdlib/stats-strided-ztest' );
 Computes a one-sample Z-test for a strided array.
 
 ```javascript
-var Results = require( '@stdlib/stats-base-ztest-one-sample-results-float64' );
+import Results from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-one-sample-results-float64@esm/index.mjs';
 
 var x = [ 4.0, 4.0, 6.0, 6.0, 5.0 ];
 
@@ -108,7 +96,7 @@ The function has the following parameters:
 The `N` and stride parameters determine which elements in the strided array are accessed at runtime. For example, to perform a one-sample Z-test over every other element in `x`,
 
 ```javascript
-var Results = require( '@stdlib/stats-base-ztest-one-sample-results-float64' );
+import Results from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-one-sample-results-float64@esm/index.mjs';
 
 var x = [ 4.0, 0.0, 4.0, 0.0, 6.0, 0.0, 6.0, 0.0, 5.0, 0.0 ];
 
@@ -125,8 +113,8 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-var Results = require( '@stdlib/stats-base-ztest-one-sample-results-float64' );
-var Float64Array = require( '@stdlib/array-float64' );
+import Results from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-one-sample-results-float64@esm/index.mjs';
+import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
 
 var x0 = new Float64Array( [ 0.0, 4.0, 4.0, 6.0, 6.0, 5.0 ] );
 var x1 = new Float64Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
@@ -144,7 +132,7 @@ var bool = ( out === results );
 Computes a one-sample Z-test for a strided array using alternative indexing semantics.
 
 ```javascript
-var Results = require( '@stdlib/stats-base-ztest-one-sample-results-float64' );
+import Results from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-one-sample-results-float64@esm/index.mjs';
 
 var x = [ 4.0, 4.0, 6.0, 6.0, 5.0 ];
 
@@ -163,7 +151,7 @@ The function has the following additional parameters:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, the offset parameter supports indexing semantics based on a starting index. For example, to perform a one-sample Z-test over every other element in `x` starting from the second element
 
 ```javascript
-var Results = require( '@stdlib/stats-base-ztest-one-sample-results-float64' );
+import Results from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-one-sample-results-float64@esm/index.mjs';
 
 var x = [ 0.0, 4.0, 0.0, 4.0, 0.0, 6.0, 0.0, 6.0, 0.0, 5.0 ];
 
@@ -197,10 +185,15 @@ var bool = ( out === results );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var Results = require( '@stdlib/stats-base-ztest-one-sample-results-float64' );
-var normal = require( '@stdlib/random-array-normal' );
-var ztest = require( '@stdlib/stats-strided-ztest' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="module">
+
+import Results from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-one-sample-results-float64@esm/index.mjs';
+import normal from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-normal@esm/index.mjs';
+import ztest from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-strided-ztest@esm/index.mjs';
 
 var x = normal( 1000, 0.0, 1.0, {
     'dtype': 'generic'
@@ -211,6 +204,10 @@ var out = ztest( x.length, 'two-sided', 0.05, 0.0, 1.0, x, 1, results );
 // returns {...}
 
 console.log( out.toString() );
+
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -240,7 +237,7 @@ console.log( out.toString() );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -303,15 +300,15 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/stats-strided-ztest/main/LICENSE
 
-[@stdlib/stats/base/ztest/alternatives]: https://github.com/stdlib-js/stats-base-ztest-alternatives
+[@stdlib/stats/base/ztest/alternatives]: https://github.com/stdlib-js/stats-base-ztest-alternatives/tree/esm
 
-[@stdlib/stats/base/ztest/one-sample/results/float64]: https://github.com/stdlib-js/stats-base-ztest-one-sample-results-float64
+[@stdlib/stats/base/ztest/one-sample/results/float64]: https://github.com/stdlib-js/stats-base-ztest-one-sample-results-float64/tree/esm
 
-[@stdlib/array/base/accessor]: https://github.com/stdlib-js/array-base-accessor
+[@stdlib/array/base/accessor]: https://github.com/stdlib-js/array-base-accessor/tree/esm
 
-[@stdlib/stats/strided/dztest]: https://github.com/stdlib-js/stats-strided-dztest
+[@stdlib/stats/strided/dztest]: https://github.com/stdlib-js/stats-strided-dztest/tree/esm
 
-[@stdlib/stats/strided/sztest]: https://github.com/stdlib-js/stats-strided-sztest
+[@stdlib/stats/strided/sztest]: https://github.com/stdlib-js/stats-strided-sztest/tree/esm
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
