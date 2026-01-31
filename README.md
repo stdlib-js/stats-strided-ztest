@@ -58,6 +58,11 @@ A Z-test commonly refers to a one-sample location test which compares the mean o
 To use in Observable,
 
 ```javascript
+ztest = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-strided-ztest@umd/browser.js' )
+```
+The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/stats-strided-ztest/tags). For example,
+
+```javascript
 ztest = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-strided-ztest@v0.1.0-umd/browser.js' )
 ```
 
@@ -70,7 +75,7 @@ var ztest = require( 'path/to/vendor/umd/stats-strided-ztest/index.js' )
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-strided-ztest@v0.1.0-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-strided-ztest@umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -209,7 +214,7 @@ var bool = ( out === results );
 <body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-one-sample-results-float64@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-normal@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-strided-ztest@v0.1.0-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-strided-ztest@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
