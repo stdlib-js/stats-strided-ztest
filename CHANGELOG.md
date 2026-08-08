@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-06-26)
+## Unreleased (2026-08-08)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`a4f9b17`](https://github.com/stdlib-js/stdlib/commit/a4f9b17b1b09503c952cc2715991f85945226922) - **chore:** resolve lint errors _(by Athan Reines)_
 -   [`f210de9`](https://github.com/stdlib-js/stdlib/commit/f210de942cbdf23ce50500989c4d96433d5ae53d) - **bench:** refactor to use string interpolation in `stats/strided` [(#11079)](https://github.com/stdlib-js/stdlib/pull/11079) _(by Lokesh Ranjan, Athan Reines)_
 
 </details>
